@@ -1,5 +1,7 @@
 ## TODO:
 
+* Make it look nicer...
+
 * Modes
     * Random cards
     * Choose cards
