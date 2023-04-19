@@ -1,4 +1,4 @@
-Use [here](mattkosack.github.io/PlaneChaseApp)
+Use [here](https://mattkosack.github.io/PlaneChaseApp/)
 
 ## TODO:
 
