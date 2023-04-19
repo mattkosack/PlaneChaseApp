@@ -1,3 +1,4 @@
+from PIL import Image
 from requests import get
 from json import loads, load, dump
 import time
@@ -19,8 +20,11 @@ with open("download_info/planar.json", "r") as file1:
             "oracle_text" : oracle_text,
             "type_line" : type_line
         }
-        with open(f"cards/{name}.png", "wb") as im:
-            im.write(get(card["image_uris"]["border_crop"]).content)
+        response = get(card["image_uris"]["border_crop"], stream=True)
+        response.raw.decode_content = True
+        with Image.open(response.raw) as im:
+            im = im.rotate(-90, expand=True) 
+            im.save(f"cards/{name}.png")
 
         # It's only ~100 cards, I don't feel like playing with the API rate limit or making a more optimal request
         time.sleep(0.5) 

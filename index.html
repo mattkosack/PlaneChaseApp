@@ -3,11 +3,31 @@
 <head>
     <title>Planechase App</title>
     <meta charset="utf-8">
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
     <!-- <link rel="icon" href="img/favicon.png"> -->
     <script src="index.js"></script>
 </head>
-<body>
-    <button id="show-image" onclick="showImage()">Show Image</button>
+<body onload="loadFile()">
+    <div id="button-container">
+        <div id="left-section">
+            <button id="show-image-button" onclick="showImage()">Planeswalk!</button>
+            <button id="show-oracle-text" onclick="showOracleText()">Oracle Text</button>
+        </div>
+        <div id="image-container">
+            <img id="img" src="card-back-planechase.jpg">
+        </div>
+        <div id="right-section">
+            <button id="roll-die-button" onclick="rollDice()">Roll Planar Die</button>
+            <div class="dice" id="dice">
+                <span class="number" id="number1">PW</span>
+                <span class="number" id="number2">-</span>
+                <span class="number" id="number3">-</span>
+                <span class="number" id="number4">-</span>
+                <span class="number" id="number5">-</span>
+                <span class="number" id="number6">CH</span>
+            </div>
+        </div>
+    </div>
+    <div id="oracle-text"></div>
 </body>
 </html>
