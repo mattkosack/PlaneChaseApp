@@ -8,26 +8,36 @@
     <script src="index.js"></script>
 </head>
 <body onload="loadFile()">
+    <div class="overlay"></div>
+	<div class="popup">
+		<h2>Popup Window</h2>
+		<p>This is a popup window.</p>
+        <p id="num-selected"></p>
+		<button onclick="closePopup()">Close Popup</button>
+	</div>
     <div id="button-container">
         <div id="left-section">
             <button id="show-image-button" onclick="showImage()">Planeswalk!</button>
             <button id="show-oracle-text" onclick="showOracleText()">Oracle Text</button>
+            <button id="show-deck-select" onclick="openPopup()">Deck Select</button>
         </div>
         <div id="image-container">
-            <img id="img" src="card-back-planechase.jpg">
+            <img id="img" src="card-back-planechase.png" onclick="showImage()">
         </div>
         <div id="right-section">
             <button id="roll-die-button" onclick="rollDice()">Roll Planar Die</button>
-            <div class="dice" id="dice">
-                <span class="number" id="number1">PW</span>
-                <span class="number" id="number2">-</span>
-                <span class="number" id="number3">-</span>
-                <span class="number" id="number4">-</span>
-                <span class="number" id="number5">-</span>
-                <span class="number" id="number6">CH</span>
+            <div id="dice-container">
+                <div class="dice" id="dice">
+                    <span class="number" id="number1">PW</span>
+                    <span class="number" id="number2">-</span>
+                    <span class="number" id="number3">-</span>
+                    <span class="number" id="number4">-</span>
+                    <span class="number" id="number5">-</span>
+                    <span class="number" id="number6">CH</span>
+                </div>
             </div>
         </div>
     </div>
-    <div id="oracle-text"></div>
+    <div id="oracle-text" style="display: none;"></div>
 </body>
 </html>

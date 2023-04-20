@@ -1,8 +1,10 @@
 let fileContents;
 let oracleText = "";
+let deckSelect = false;
+let deck = [];
 
 function loadFile() {
-    fetch('important_info.json')
+    fetch("important_info.json")
         .then(response => response.text())
         .then(data => {
             fileContents = JSON.parse(data);
@@ -24,20 +26,26 @@ function getRandomCard() {
 }
 
 function showImage() {
-    let image = getRandomCard();
-    document.getElementById('img').src = image;
+    let image;
+    if (deckSelect) {
+        // Todo: Add deck functionality
+        image = "card-back-planechase.png"
+    } else {
+        image = getRandomCard();
+    }
+    document.getElementById("img").src = image;
 }
 
 function setOracleText(text) {
-    document.getElementById('oracle-text').innerHTML = text;
+    document.getElementById("oracle-text").innerHTML = text;
 }
 
 function showOracleText() {
     var div = document.getElementById("oracle-text");
-    if (div.style.display === "none") {
-        div.style.display = "block";
-    } else {
+    if (div.style.display === "block") {
         div.style.display = "none";
+    } else {
+        div.style.display = "block";
     }
 }
 
@@ -55,8 +63,14 @@ function rollDice() {
         var randomIndex = Math.floor(Math.random() * numbers.length);
         numbers[randomIndex].style.display = "block";
     }, 1000);
+}
 
-    // setTimeout(() => {
-    //     dice.classList.remove("roll");
-    // }, 1500);
+function openPopup() {
+    document.querySelector(".popup").style.display = "block";
+    document.querySelector(".overlay").style.display = "block";
+}
+
+function closePopup() {
+    document.querySelector(".popup").style.display = "none";
+    document.querySelector(".overlay").style.display = "none";
 }

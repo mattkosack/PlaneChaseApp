@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(24,20, 15);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #button-container {
     display: flex;
     justify-content: space-between;
@@ -10,21 +15,19 @@
     margin: 10px;
 }
 
-#show-image-button,
-#roll-die-button {
-    width: 150px;
-}
-
 #left-section, #right-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 button {
     background-color: #4CAF50;
     border: none;
     color: white;
+    width: 100%;
+    height: 33%;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -32,14 +35,20 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    
 }
 
 #oracle-text {
+    justify-content: center;
+    margin: 10px;
     display: none;
     padding: 10px;
     background-color: #f5f5f5;
     border: 1px solid #ddd;
+}
+
+.dice-container { 
+    display: flex;
+    justify-content: center;
 }
 
 .dice {
@@ -58,4 +67,31 @@ button {
 
 .number {
     display: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #333333;
+    z-index: 999;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
 }
